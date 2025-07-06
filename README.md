@@ -50,7 +50,7 @@ Netflix Clone is a modern, responsive web-based recreation of the Netflix landin
 
 ## 🚀 Demo
 
-> **🌟 Live Demo:** *Coming Soon!*
+> **🌟 Live Demo:** [Netflix Clone](https://netflix-clone-sooty-phi.vercel.app)
 > 
 > *Experience the Netflix Clone with beautiful visuals and responsive design!*
 
