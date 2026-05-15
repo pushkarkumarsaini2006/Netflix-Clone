@@ -5,14 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix India – Watch TV Shows Online, Watch Movies Online</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="A simple Netflix Clone demo showcasing responsive UI, streaming previews, and accessibility improvements.">
+    <link rel="preload" as="style" href="style.css" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <!-- Preload likely LCP image -->
+    <link rel="preload" as="image" href="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png">
 </head>
 
 <body>
 
     <div class="main">
         <nav>
-            <span><img width="53" src="assets/images/logo.svg" alt=""></span>
+            <span><img width="53" src="assets/images/logo.svg" alt="Netflix logo"></span>
             <div>
                 <button class="btn">English</button>
                 <button class="btn btn-red-sm">Sign In</button>
@@ -41,9 +45,11 @@
         </div>
 
         <div class="secImg">
-            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="">
-            <video src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v"
-                autoplay loop muted></video>
+            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="Television showing Netflix" width="800" height="500">
+            <video width="640" height="360" autoplay loop muted>
+                <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4">
+                <track kind="captions" src="assets/videos/captions-en.vtt" srclang="en" label="English">
+            </video>
         </div>
     </section>
     <div class="separation"></div>
@@ -51,7 +57,7 @@
     <section class="first second">
 
         <div class="secImg">
-            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="">
+            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="Mobile device showing Netflix" width="360" height="640">
 
         </div>
         <div>
@@ -68,9 +74,11 @@
         </div>
 
         <div class="secImg">
-            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="">
-            <video src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v"
-                autoplay loop muted></video>
+            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="Multiple devices" width="800" height="500">
+            <video width="640" height="360" autoplay loop muted>
+                <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v" type="video/mp4">
+                <track kind="captions" src="assets/videos/captions-en.vtt" srclang="en" label="English">
+            </video>
         </div>
     </section>
     <div class="separation"></div>
@@ -80,8 +88,7 @@
 
         <div class="secImg">
             <img src="https://occ-0-2849-3646.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVr8nYuAg0xDpXDv0VI9HUoH7r2aGp4TKRCsKNQrMwxzTtr-NlwOHeS8bCI2oeZddmu3nMYr3j9MjYhHyjBASb1FaOGYZNYvPBCL.png?r=54d"
-                alt="">
-
+                alt="Children's profile illustration" width="600" height="360">
         </div>
         <div>
             <span>Create profiles for kids</span>
