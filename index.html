@@ -10,13 +10,22 @@
     <noscript><link rel="stylesheet" href="style.css"></noscript>
     <!-- Preload likely LCP image -->
     <link rel="preload" as="image" href="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png">
+    <!-- Critical CSS inlined to speed up first render -->
+    <style>
+        nav{display:flex;justify-content:space-between;align-items:center;height:100px;max-width:60vw;margin:auto}
+        .hero{display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;padding:0 30px}
+        .hero> :nth-child(1){font-size:48px;font-weight:700;text-align:center}
+        .hero> :nth-child(2){font-size:24px;text-align:center}
+        .hero> :nth-child(3){font-size:20px;text-align:center}
+        body{background-color:#000}
+    </style>
 </head>
 
 <body>
 
     <div class="main">
         <nav>
-            <span><img width="53" src="assets/images/logo.svg" alt="Netflix logo"></span>
+            <span><img width="130" src="assets/images/logo.svg" alt="Netflix logo"></span>
             <div>
                 <button class="btn">English</button>
                 <button class="btn btn-red-sm">Sign In</button>
@@ -45,7 +54,7 @@
         </div>
 
         <div class="secImg">
-            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="Television showing Netflix" width="800" height="500">
+            <img fetchpriority="high" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="Television showing Netflix" width="800" height="500">
             <video width="640" height="360" autoplay loop muted>
                 <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4">
                 <track kind="captions" src="assets/videos/captions-en.vtt" srclang="en" label="English">
@@ -57,7 +66,7 @@
     <section class="first second">
 
         <div class="secImg">
-            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="Mobile device showing Netflix" width="360" height="640">
+            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="Mobile device showing Netflix" width="360" height="640" fetchpriority="low">
 
         </div>
         <div>
@@ -74,7 +83,7 @@
         </div>
 
         <div class="secImg">
-            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="Multiple devices" width="800" height="500">
+            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="Multiple devices" width="800" height="500" fetchpriority="low">
             <video width="640" height="360" autoplay loop muted>
                 <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v" type="video/mp4">
                 <track kind="captions" src="assets/videos/captions-en.vtt" srclang="en" label="English">
@@ -88,7 +97,8 @@
 
         <div class="secImg">
             <img src="https://occ-0-2849-3646.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVr8nYuAg0xDpXDv0VI9HUoH7r2aGp4TKRCsKNQrMwxzTtr-NlwOHeS8bCI2oeZddmu3nMYr3j9MjYhHyjBASb1FaOGYZNYvPBCL.png?r=54d"
-                alt="Children's profile illustration" width="600" height="360">
+                alt="Children's profile illustration" width="600" height="360" fetchpriority="low">
+
         </div>
         <div>
             <span>Create profiles for kids</span>
@@ -169,6 +179,14 @@
             </div>
         </div>
     </footer>
+<script>
+// Register a simple service worker for caching static assets
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').catch(function(err){console.log('SW registration failed',err)});
+  });
+}
+</script>
 </body>
 
 </html>
