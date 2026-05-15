@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
-
+/* Fonts are loaded in the HTML with preconnect and a stylesheet link to avoid FOIT */
 * {
     padding: 0;
     margin: 0;
@@ -96,21 +95,22 @@ nav button {
     border-radius: 4px;
     border: 1px solid white;
     cursor: pointer;
-
 }
 
 .btn-red {
-    background-color: red;
+    background-color: #e50914; /* stronger Netflix red for better contrast */
     color: white;
     padding: 3px 24px;
     font-size: 20px;
     border-radius: 4px;
     font-weight: 400;
+    border: none;
 }
 
 .btn-red-sm {
-    background-color: red;
+    background-color: #e50914;
     color: white;
+    border: none;
 }
 
 .hero-buttons {
@@ -146,16 +146,20 @@ nav button {
 }
 
 .secImg img {
-    width: 555px;
+    width: 100%;
+    max-width: 555px;
     position: relative;
     z-index: 10;
+    height: auto; /* preserve intrinsic aspect ratio and prevent CLS */
 }
 
 .secImg video {
     position: absolute;
     top: 51px;
     right: 0;
-    width: 555px;
+    width: 100%;
+    max-width: 555px;
+    height: auto;
 }
 
 section.first>div {
